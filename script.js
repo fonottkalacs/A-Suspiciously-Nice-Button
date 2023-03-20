@@ -59,39 +59,42 @@ function getNewCompliment() {
 let noteSerial = 0;
 function newTicket(compliment) {
   noteSerial++;
-  const note = document.createElement("div");
-  note.classList.add("note");
-  note.setAttribute("id", `note-${noteSerial}`);
 
-  // TEXT CONTENT SIDE
-  const textSide = document.createElement("div");
-  textSide.classList.add("text-side");
+  if (noteSerial <= 25) {
+    const note = document.createElement("div");
+    note.classList.add("note");
+    note.setAttribute("id", `note-${noteSerial}`);
 
-  const noteContent = document.createElement("p");
-  noteContent.classList.add("note-text-content");
-  noteContent.innerText = compliment;
+    // TEXT CONTENT SIDE
+    const textSide = document.createElement("div");
+    textSide.classList.add("text-side");
 
-  textSide.appendChild(noteContent);
+    const noteContent = document.createElement("p");
+    noteContent.classList.add("note-text-content");
+    noteContent.innerText = compliment;
 
-  // ICONS SIDE
+    textSide.appendChild(noteContent);
 
-  const iconsSide = document.createElement("div");
-  iconsSide.classList.add("icons-side");
+    // ICONS SIDE
 
-  const closeButton = getCloseButton();
-  closeButton.setAttribute(
-    "onClick",
-    "this.parentElement.parentElement.remove()"
-  );
+    const iconsSide = document.createElement("div");
+    iconsSide.classList.add("icons-side");
 
-  const likeButton = getLikeButton();
-  likeButton.setAttribute("onClick", "this.classList.toggle('liked')");
+    const closeButton = getCloseButton();
+    closeButton.setAttribute(
+      "onClick",
+      "this.parentElement.parentElement.remove()"
+    );
 
-  iconsSide.appendChild(closeButton);
-  iconsSide.appendChild(likeButton);
-  note.appendChild(textSide);
-  note.appendChild(iconsSide);
-  notesContainer.appendChild(note);
+    const likeButton = getLikeButton();
+    likeButton.setAttribute("onClick", "this.classList.toggle('liked')");
+
+    iconsSide.appendChild(closeButton);
+    iconsSide.appendChild(likeButton);
+    note.appendChild(textSide);
+    note.appendChild(iconsSide);
+    notesContainer.appendChild(note);
+  }
 }
 
 function getCloseButton() {
