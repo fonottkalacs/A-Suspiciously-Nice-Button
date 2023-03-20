@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #ffb99a;
+  background: -webkit-linear-gradient(0deg, #ffb99a 0%, #ffdbc5 100%);
+  background: linear-gradient(0deg, #ffb99a 0%, #ffdbc5 100%);
+}
+
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+#first-button {
+  width: 100px;
+  height: 70px;
+  background-color: rgba(255, 228, 196, 0.392);
+  border: 2px solid rgba(255, 127, 80, 0.733);
+  border-radius: 5px;
+  font-size: large;
+  position: absolute;
+  top: 43vh;
+  left: 45vw;
+  color: rgba(162, 43, 0, 0.658);
+}
+
+#notes-container {
+  width: 1050px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.note {
+  width: 190px;
+  height: 100px;
+  background-color: rgba(255, 127, 80, 0.733);
+  border-radius: 0% 0% 0% 15% / 30% 64% 25% 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffeade;
+}
+
+.text-side {
+  width: 150px;
+}
+
+.icon-side {
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-button,
+.like-button {
+  background-color: rgba(255, 127, 80, 0.733);
+  border: 2px solid #ffeade;
+  color: #ffeade;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  margin: 5px;
+}
+
+.liked {
+  color: rgb(205, 55, 0);
+}
